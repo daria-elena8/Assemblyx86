@@ -1,7 +1,7 @@
 //Suma prin procedura
 .data
-      x:       .space 4
-      y:       .space 4
+      x:       .long 3
+      y:       .long 4
       s:       .space 4
       msj:     .asciz "Suma este %d\n"
       format:   .asciz "%d %d"
@@ -28,14 +28,14 @@ main:
    int $0x80
    
      //Citire numere:   
-   pushl $x
-   pushl $y
-   push $format
-   call scanf
-   popl %ebx
-   popl %ebx
-   popl %ebx
-   popa
+//   pushl $x
+//   pushl $y
+//   push $format
+//   call scanf
+//   popl %ebx
+//   popl %ebx
+//   popl %ebx
+//   popa
 
       //Apel functie:
    pushl $s
