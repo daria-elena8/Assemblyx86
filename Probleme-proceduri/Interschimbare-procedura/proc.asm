@@ -38,7 +38,15 @@ proc2:
    call fflush
    popl %ebx
    ret
-  
+   
+interschimbare:
+      
+      movl x, %eax
+      movl y, %ebx
+      movl %ebx, x
+      movl %eax, y
+      ret
+   
 .global main
 
    
@@ -50,10 +58,8 @@ main:
    int $0x80
 
    call proc1
-   movl x, %eax
-   movl y, %ebx
-   movl %ebx, x
-   movl %eax, y
+   
+   call interschimbare
    
    movl $4, %eax
    movl $1, %ebx
